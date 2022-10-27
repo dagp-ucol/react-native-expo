@@ -1,14 +1,38 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Component } from 'react';
+import { StyleSheet, Text, View, Button, Switch } from 'react-native';
+// import { Switch } from 'react-native-web';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Hola mundo</Text>
-      <StatusBar style="auto" />
-      <Text>Hola me llamo Brandon</Text>
+export default class App extends Component<Props> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      switchValue: false,
+    };
+  }
+  onChange = (value) => {
+    console.warn("Switch value: ", value);
+    this.setState({ switchValue: value });
+  };
+  onPressLearnMore = () => {
+    console.log('onPressLearnMore');
+  }
+  render() {
+    return (
+      <View style={styles.container}>
+      <Switch
+        onValueChange = {() => this.onChange(!this.state.switchValue)}
+        value = {this.state.switchValue}
+      />
+      <Button
+        onPress={this.onPressLearnMore}
+        title="Learn More"
+        color="#841584"
+        accessibilityLabel="Learn more about this purple button"
+      />
     </View>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({
