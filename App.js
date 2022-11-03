@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Button, Switch, SafeAreaView, TextInput, onChan
 // import { Switch } from 'react-native-web';
 
 export default class App extends Component<Props> {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -26,31 +27,31 @@ export default class App extends Component<Props> {
     console.log('onPressLearnMore');
   };
 
-  onPressAlert = (text) => {
+  onPressAlert = () => {
     alert(this.state.newText);
   };
 
   render() {
     return (
       <View style={styles.container}>
-      <TextInput
+        <TextInput
           style={styles.input}
           onChangeText={this.onChangeText}
-      />
-      <Switch
-        onValueChange = {() => this.onChange(!this.state.switchValue)}
-        value = {this.state.switchValue}
-      />
-      <Button
-        onPress={this.onPressAlert}
-        title="Alert"
-        color="#841584"
-        accessibilityLabel="Learn more about this purple button"
-      />
-    </View>
+        />
+        <Button
+          onPress={this.onPressAlert}
+          title="Alert"
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+        />
+        <Switch
+          onValueChange = {() => this.onChange(!this.state.switchValue)}
+          value = {this.state.switchValue}
+        />
+      </View>
     );
-  }
-}
+  };
+};
 
 const styles = StyleSheet.create({
   container: {
