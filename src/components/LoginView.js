@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import { StyleSheet, Text, View, TextInput, Button, Alert } from "react-native";
 import { Actions } from "react-native-router-flux";
 
 export default class LoginView extends Component {
@@ -22,22 +22,11 @@ export default class LoginView extends Component {
     render() {
         return (
         <View style={styles.container}>
-            <Text>Username</Text>
-            <TextInput
-            style={styles.input}
-            onChangeText={(username) => this.setState({ username })}
-            value={this.state.username}
-            />
-            <Text>Password</Text>
-            <TextInput
-            style={styles.input}
-            onChangeText={(password) => this.setState({ password })}
-            value={this.state.password}
-            />
+            <Text>Hola</Text>
             <Button
             title="Login"
             onPress={() => {
-                Actions.home();
+                Alert.alert("Hola mundo", "Router esta funcionando")
             }}
             />
         </View>
