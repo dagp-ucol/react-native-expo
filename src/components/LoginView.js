@@ -24,9 +24,9 @@ export default class LoginView extends Component {
         <View style={styles.container}>
             <Text>Hola</Text>
             <Button
-            title="Login"
-            onPress={() => {
-                Alert.alert("Hola mundo", "Router esta funcionando")
+                title="Login"
+                onPress={() => {
+                    Alert.alert("Hola mundo", "Router esta funcionando")
             }}
             />
         </View>
