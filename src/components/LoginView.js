@@ -12,11 +12,7 @@ export default class LoginView extends Component {
     }
 
     getLogin() {
-        console.log("Hola Router");
-        return {
-        username: this.state.username,
-        password: this.state.password,
-        };
+        Actions.home();
     }
 
     render() {
@@ -26,6 +22,7 @@ export default class LoginView extends Component {
             <Button
                 title="Login"
                 onPress={() => {
+                    this.getLogin();
                     Alert.alert("Hola mundo", "Router esta funcionando")
             }}
             />

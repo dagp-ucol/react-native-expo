@@ -1,6 +1,7 @@
 import React, {Component} from "react";
+import ListView from "deprecated-react-native-listview";
 import {
-    ListView,
+    Alert,
     TouchableOpacity,
 } from "react-native";
 
@@ -33,6 +34,14 @@ export default class ArtistList extends Component {
 
     handlePress(artist) {
         // this.props.onPress(artist);
+        Alert.alert(
+            artist.name,
+            `has ${artist.listeners} listeners and id ${artist.id}`,
+            [
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            { cancelable: false }
+        )
     }
 
     render() {

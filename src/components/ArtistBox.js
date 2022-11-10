@@ -8,12 +8,13 @@ import {
 
 export default class ArtistBox extends Component {
     render() {
-        const {image, name} = this.props.artist;
+        const {image, name, listeners} = this.props.artist;
         return (
             <View style={styles.artistBox}>
                 <Image style={styles.image} source={{uri: image}}/>
                 <View style={styles.info}>
                     <Text style={styles.name}>{name}</Text>
+                    <Text style={styles.listeners}>{listeners} listeners</Text>
                 </View>
             </View>
         );
