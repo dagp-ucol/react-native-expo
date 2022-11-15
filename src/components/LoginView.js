@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, TextInput, Button, Alert } from "react-native";
+import { StyleSheet, Text, View, TextInput, Button, Alert, Image } from "react-native";
 import { Actions } from "react-native-router-flux";
 
 export default class LoginView extends Component {
@@ -18,7 +18,7 @@ export default class LoginView extends Component {
     render() {
         return (
         <View style={styles.container}>
-            <Text>Hola</Text>
+            {/* <Text>Hola</Text>
             <Button
                 title="Login"
                 style={styles.button}
@@ -26,7 +26,14 @@ export default class LoginView extends Component {
                     this.getLogin();
                     Alert.alert("Hola mundo", "Router esta funcionando")
             }}
+            /> */}
+            {/* Set App logo image here */}
+            <Image
+                style={styles.logo}
+                source={require("../assets/images/logo.png")}
             />
+
+
             {/* Login Inputs */}
             <TextInput
                 style={styles.input}
